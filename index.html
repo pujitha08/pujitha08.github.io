@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>Pujitha Attuluri — Data Engineer</title>
+<meta name="description" content="Portfolio of Pujitha Attuluri, a Data Engineer in Charlotte, NC building cloud data platforms across Azure, Microsoft Fabric, and Databricks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0D1520;
+    --panel:#121C2C;
+    --panel-2:#17233690;
+    --rule:#26344a;
+    --text:#E8ECF3;
+    --muted:#93a0b5;
+    --gold:#C9A24B;
+    --gold-dim:#8f7332;
+    --bronze:#a9703f;
+    --silver:#8fa2b8;
+    --max:1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--text);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;margin:0;letter-spacing:-0.01em;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  ::selection{background:var(--gold);color:#12180a;}
+
+  /* layered band motif */
+  .strata{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
+  .strata span{position:absolute;left:-10%;right:-10%;height:130px;border-radius:2px;opacity:0.10;transform:skewY(-3deg);}
+  .strata .b1{top:6%;background:var(--bronze);}
+  .strata .b2{top:34%;background:var(--silver);opacity:.08;}
+  .strata .b3{top:64%;background:var(--gold);opacity:.14;}
+
+  header{
+    position:sticky;top:0;z-index:20;
+    background:rgba(13,21,32,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+  }
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;}
+  .navlinks{display:flex;gap:28px;font-size:0.92rem;color:var(--muted);}
+  .navlinks a:hover{color:var(--gold);}
+  .navlinks{display:none;}
+  @media(min-width:720px){.navlinks{display:flex;}}
+
+  /* hero */
+  .hero{position:relative;padding:96px 0 84px;overflow:hidden;}
+  .hero .wrap{position:relative;z-index:1;}
+  .eyebrow{color:var(--gold);font-size:0.92rem;font-weight:500;margin-bottom:18px;}
+  .hero h1{font-size:clamp(2.4rem,5.6vw,3.9rem);max-width:11ch;line-height:1.04;}
+  .hero p.lede{margin-top:22px;max-width:56ch;color:var(--muted);font-size:1.12rem;}
+  .hero .meta{margin-top:28px;display:flex;flex-wrap:wrap;gap:22px;color:var(--silver);font-size:0.94rem;}
+  .cta-row{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px;}
+  .btn{
+    display:inline-block;padding:13px 24px;border-radius:3px;font-size:0.95rem;font-weight:600;
+    border:1px solid transparent;transition:transform .15s ease, background .2s ease;
+  }
+  .btn-primary{background:var(--gold);color:#161006;}
+  .btn-primary:hover{transform:translateY(-1px);}
+  .btn-ghost{border-color:var(--rule);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+
+  section{padding:74px 0;border-top:1px solid var(--rule);}
+  .kicker{color:var(--gold);font-size:0.9rem;font-weight:600;margin-bottom:10px;}
+  h2.sec-title{font-size:clamp(1.7rem,3vw,2.3rem);max-width:20ch;}
+  .sec-head{margin-bottom:44px;max-width:640px;}
+  .sec-sub{color:var(--muted);margin-top:14px;font-size:1.02rem;max-width:56ch;}
+
+  /* about */
+  .about-grid{display:grid;gap:40px;grid-template-columns:1fr;}
+  @media(min-width:860px){.about-grid{grid-template-columns:1.3fr 1fr;}}
+  .about-body p{color:var(--text);font-size:1.03rem;margin:0 0 16px;}
+  .stat-list{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-content:start;}
+  .stat{border-left:2px solid var(--gold-dim);padding-left:16px;}
+  .stat b{display:block;font-family:'Fraunces',serif;font-size:1.9rem;font-weight:600;color:var(--gold);}
+  .stat span{color:var(--muted);font-size:0.88rem;}
+
+  /* skills */
+  .skill-groups{display:grid;gap:26px;}
+  @media(min-width:720px){.skill-groups{grid-template-columns:1fr 1fr;}}
+  .skill-cat{border:1px solid var(--rule);border-radius:4px;padding:22px 22px 18px;background:var(--panel);}
+  .skill-cat h3{font-size:1rem;font-family:'Inter',sans-serif;font-weight:600;color:var(--gold);margin-bottom:14px;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{border:1px solid var(--rule);padding:6px 12px;border-radius:20px;font-size:0.84rem;color:var(--silver);}
+
+  /* certifications */
+  .cert-row{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));}
+  .cert{border:1px solid var(--rule);background:var(--panel);border-radius:4px;padding:20px;}
+  .cert h4{font-size:1rem;margin-bottom:4px;}
+  .cert p{color:var(--muted);font-size:0.88rem;margin:0;}
+
+  /* experience timeline */
+  .timeline{position:relative;padding-left:26px;border-left:2px solid var(--rule);}
+  .job{position:relative;padding-bottom:46px;}
+  .job:last-child{padding-bottom:0;}
+  .job::before{
+    content:'';position:absolute;left:-33px;top:5px;width:12px;height:12px;border-radius:50%;
+    background:var(--ink);border:2px solid var(--gold);
+  }
+  .job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;}
+  .job-title{font-size:1.12rem;font-weight:600;font-family:'Fraunces',serif;}
+  .job-org{color:var(--gold);font-weight:500;}
+  .job-time{color:var(--muted);font-size:0.88rem;white-space:nowrap;}
+  .job ul{margin:12px 0 0;padding-left:18px;color:var(--text);}
+  .job li{margin-bottom:8px;font-size:0.96rem;}
+  .job-loc{color:var(--muted);font-size:0.85rem;}
+
+  /* projects */
+  .proj-grid{display:grid;gap:22px;grid-template-columns:1fr;}
+  @media(min-width:760px){.proj-grid{grid-template-columns:1fr 1fr;}}
+  .proj-card{border:1px solid var(--rule);background:var(--panel);border-radius:4px;padding:26px;display:flex;flex-direction:column;}
+  .proj-card h3{font-size:1.18rem;margin-bottom:10px;}
+  .proj-card p{color:var(--muted);font-size:0.95rem;flex-grow:1;}
+  .proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0;}
+  .proj-tags span{font-size:0.76rem;color:var(--silver);border:1px solid var(--rule);padding:3px 9px;border-radius:14px;}
+  .proj-link{color:var(--gold);font-size:0.9rem;font-weight:600;margin-top:6px;}
+  .proj-link:hover{text-decoration:underline;}
+  .flagship{border-color:var(--gold-dim);position:relative;}
+  .flagship::before{
+    content:'Live App';position:absolute;top:-11px;left:22px;background:var(--ink);
+    color:var(--gold);font-size:0.74rem;font-weight:600;padding:0 8px;
+  }
+
+  footer{padding:60px 0 50px;text-align:left;}
+  footer .foot-inner{display:flex;flex-direction:column;gap:18px;}
+  @media(min-width:720px){.foot-inner{flex-direction:row;justify-content:space-between;align-items:flex-end;}}
+  footer h2{font-size:clamp(1.6rem,3.4vw,2.2rem);max-width:14ch;}
+  .foot-links{display:flex;gap:20px;font-size:0.95rem;}
+  .foot-links a{color:var(--muted);}
+  .foot-links a:hover{color:var(--gold);}
+  .copyright{margin-top:40px;color:var(--muted);font-size:0.8rem;border-top:1px solid var(--rule);padding-top:20px;}
+
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <div class="brand">Pujitha Attuluri</div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="btn btn-ghost" style="padding:9px 18px;font-size:0.86rem;">Get in touch</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="strata"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
+  <div class="wrap">
+    <div class="eyebrow">Data Engineer · Charlotte, NC</div>
+    <h1>I build the pipelines that decisions run on.</h1>
+    <p class="lede">Azure-certified data engineer with 4+ years shipping production data platforms — most recently engineering the Medallion migration to Microsoft Fabric at Hearst Television, while finishing an M.S. in Data Science &amp; Business Analytics at UNC Charlotte.</p>
+    <div class="meta">
+      <span>4+ years production experience</span>
+      <span>Azure Data Engineer Associate</span>
+      <span>MS DS&amp;BA, UNC Charlotte — Dec 2026</span>
+    </div>
+    <div class="cta-row">
+      <a href="#projects" class="btn btn-primary">See the work</a>
+      <a href="/resume.pdf" class="btn btn-ghost">Download résumé ↓</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">About</div>
+      <h2 class="sec-title">Four years turning raw, messy data into systems people trust.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-body">
+        <p>I started as a Decision Scientist at Mu Sigma, where I redesigned data schemas, migrated legacy pipelines to Delta Lake, and cut SLA processing time by 60%. I moved into leading a team as an Apprentice Leader, shipping a supply-chain risk simulation tool that saved $48M year-to-date and building the GenAI RAG framework that came after it.</p>
+        <p>Most recently, I was at Hearst Television, engineering the analytics layer of a live migration from legacy Decentrix infrastructure to Microsoft Fabric — building Bronze/Silver/Gold data layers, validating revenue data at scale, and shipping Power BI semantic models with row-level security across 30+ stations.</p>
+        <p>I'm finishing my Master's in Data Science &amp; Business Analytics at UNC Charlotte (GPA 4.0) this December, and looking for a full-time data engineering, analytics engineering, or data science role starting January 2027.</p>
+      </div>
+      <div class="stat-list">
+        <div class="stat"><b>60%</b><span>SLA processing time cut via Delta Lake migration</span></div>
+        <div class="stat"><b>$48M</b><span>YTD savings from a supply-chain risk tool I led</span></div>
+        <div class="stat"><b>100M+</b><span>records processed per reporting cycle</span></div>
+        <div class="stat"><b>30+</b><span>stations served by the Fabric migration I helped build</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Skills</div>
+      <h2 class="sec-title">The stack I build production systems with.</h2>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-cat">
+        <h3>Cloud &amp; Data Platform</h3>
+        <div class="chip-row">
+          <span class="chip">Azure Data Factory</span><span class="chip">Microsoft Fabric</span><span class="chip">Azure Databricks</span><span class="chip">Azure Synapse</span><span class="chip">ADLS Gen2</span><span class="chip">Azure Logic Apps</span><span class="chip">Docker</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h3>Data Engineering</h3>
+        <div class="chip-row">
+          <span class="chip">Apache Spark / PySpark</span><span class="chip">Kafka</span><span class="chip">Hadoop</span><span class="chip">Delta Lake</span><span class="chip">Medallion Architecture</span><span class="chip">Batch &amp; Streaming ETL</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h3>Databases &amp; SQL</h3>
+        <div class="chip-row">
+          <span class="chip">Advanced SQL</span><span class="chip">MySQL</span><span class="chip">Azure SQL DB</span><span class="chip">MS SQL Server</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h3>BI &amp; Visualization</h3>
+        <div class="chip-row">
+          <span class="chip">Power BI (DAX, RLS)</span><span class="chip">Microsoft Fabric</span><span class="chip">Plotly Dash</span><span class="chip">Streamlit</span><span class="chip">Excel</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h3>AI &amp; GenAI</h3>
+        <div class="chip-row">
+          <span class="chip">RAG</span><span class="chip">LangChain</span><span class="chip">LLMs (OpenAI, Claude, Gemini)</span><span class="chip">MLflow</span><span class="chip">Scikit-learn</span><span class="chip">XGBoost</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <h3>DevOps &amp; Languages</h3>
+        <div class="chip-row">
+          <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">R</span><span class="chip">Git</span><span class="chip">Azure DevOps</span><span class="chip">CI/CD</span><span class="chip">SonarQube</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Certifications</div>
+      <h2 class="sec-title">Verified credentials.</h2>
+    </div>
+    <div class="cert-row">
+      <div class="cert">
+        <h4>Microsoft Certified: Azure Data Engineer Associate</h4>
+        <p>Microsoft</p>
+      </div>
+      <div class="cert">
+        <h4>Snowflake Data Warehouse Essentials</h4>
+        <p>Snowflake</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Experience</div>
+      <h2 class="sec-title">Where I've worked.</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="job">
+        <div class="job-head">
+          <div><span class="job-title">Business Intelligence &amp; Analytics Engineering Intern</span><br><span class="job-org">Hearst Television</span> · <span class="job-loc">Charlotte, NC</span></div>
+          <div class="job-time">Jun 2026 – Sep 2026</div>
+        </div>
+        <ul>
+          <li>Engineering the analytics layer of a live platform migration from legacy Decentrix to Microsoft Fabric, applying Medallion Architecture (Bronze, Silver, Gold) to serve Power BI semantic models across 30+ Hearst Television stations.</li>
+          <li>Designed fact/dimension relationships in the semantic model, implemented Row-Level Security for station-level access, and built Power BI dashboards that replaced manual reporting for sales and leadership stakeholders.</li>
+          <li>Authored SQL validation frameworks in Microsoft Fabric to reconcile migrated revenue data against the legacy platform, cutting reconciliation time per deployment cycle.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><span class="job-title">Research Assistant, AI Music Detection</span><br><span class="job-org">UNC Charlotte, School of Data Science</span> · <span class="job-loc">Charlotte, NC</span></div>
+          <div class="job-time">May 2026 – Jun 2026</div>
+        </div>
+        <ul>
+          <li>Built an end-to-end Python pipeline collecting Billboard chart data, extracting audio features via the Gemini API, and generating synthetic AI music through Suno and Udio to construct a balanced training dataset.</li>
+          <li>Designed schema validation and quality checkpoints, applying systematic prompt engineering across genres to reduce distribution bias for downstream classification model training.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><span class="job-title">Teaching Assistant / Graduate Assistant</span><br><span class="job-org">UNC Charlotte, School of Data Science</span> · <span class="job-loc">Charlotte, NC</span></div>
+          <div class="job-time">Jan 2026 – May 2026</div>
+        </div>
+        <ul>
+          <li>Supported faculty in delivering graduate data science coursework, mentoring students through Python, SQL, Power BI, and Streamlit projects with structured feedback on code quality and analytical rigor.</li>
+          <li>Produced written instructional materials that made complex technical concepts accessible to students from diverse technical backgrounds.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><span class="job-title">Apprentice Leader</span><br><span class="job-org">Mu Sigma Inc.</span> · <span class="job-loc">Bangalore, India</span></div>
+          <div class="job-time">Jan 2024 – Jan 2025</div>
+        </div>
+        <ul>
+          <li>Led a cross-functional team of data engineers and analysts to deliver a supply chain risk simulation app on Azure Web App Service, generating $48M in year-to-date savings by preventing production risk escalation.</li>
+          <li>Implemented Slowly Changing Dimension (Type 2) using Delta Lake with full ACID compliance, cutting computational costs by 60%.</li>
+          <li>Developed a production GenAI RAG framework on Azure infrastructure, reducing AI compute costs by 15% and shaping the product roadmap.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head">
+          <div><span class="job-title">Decision Scientist</span><br><span class="job-org">Mu Sigma Inc.</span> · <span class="job-loc">Bangalore, India</span></div>
+          <div class="job-time">Jan 2021 – Jan 2024</div>
+        </div>
+        <ul>
+          <li>Redesigned data storage schema for the Exceptions Planning project, delivering a 60% reduction in SLA processing time by migrating Parquet to Delta format with multithreading and version history.</li>
+          <li>Built high-frequency data models using Lambda Architecture and Databricks Autoloader, delivering near-real-time data to planners and boosting inventory accuracy by 20%.</li>
+          <li>Designed a scalable Power BI reporting layer processing 100M+ records per cycle, saving 6+ hours per week per inbound scheduler across all sites.</li>
+          <li>Migrated Databricks ETL workflows from interactive to job clusters, reducing cluster management costs by 15% and minimizing overload failures across products.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Projects</div>
+      <h2 class="sec-title">What I've built outside the day job.</h2>
+    </div>
+    <div class="proj-grid">
+
+      <div class="proj-card flagship">
+        <h3>Steam Game Success Predictor</h3>
+        <p>Engineered a custom success metric from 40,000+ Steam games, benchmarked four models with MLflow tracking, and shipped a 3-tab Streamlit app with real-time inference, an LLM-powered RAG chatbot via Groq/Llama 3, and a SHAP-driven market segmentation dashboard. Team project.</p>
+        <div class="proj-tags"><span>Python</span><span>XGBoost</span><span>SHAP</span><span>Optuna</span><span>MLflow</span><span>RAG</span><span>Streamlit</span></div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a class="proj-link" href="https://steam-games-analysis-dsba6156.streamlit.app/" target="_blank" rel="noopener">Live app →</a>
+          <a class="proj-link" href="https://github.com/lassieo/Steam-Games-Analysis" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <h3>Osteoporosis Care Gap Analysis</h3>
+        <p>Applied logistic regression, random forest, and K-Means patient segmentation to a clinical dataset, identifying care-gap status as the strongest predictor of repeat-fracture risk (ROC-AUC 0.94) and quantifying up to $1.3M in savings at 75% referral adoption.</p>
+        <div class="proj-tags"><span>Python</span><span>Logistic Regression</span><span>Random Forest</span><span>K-Means</span><span>PCA</span><span>Scikit-learn</span></div>
+        <a class="proj-link" href="https://github.com/pujitha08/Osteoporosis-Care-Gap-Analysis" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+
+      <div class="proj-card">
+        <h3>Netflix Churn Prediction</h3>
+        <p>Built a churn analytics framework combining predictive modeling, K-Means customer segmentation, and moderation analysis on 5,000 subscribers — 89.2% accuracy and 96.6% ROC-AUC, surfacing inactivity as the strongest early churn signal. Team project.</p>
+        <div class="proj-tags"><span>Python</span><span>Logistic Regression</span><span>K-Means</span><span>Statsmodels</span><span>Moderation Analysis</span></div>
+        <a class="proj-link" href="https://github.com/pujitha08/Netflix-Churn-prediction" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-inner">
+      <h2>Let's build something reliable together.</h2>
+      <div class="foot-links">
+        <a href="mailto:pujithaattuluri08@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/pujitha-attuluri-738830158" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/pujitha08" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="tel:+19804864746">+1 980-486-4746</a>
+      </div>
+    </div>
+    <div class="copyright">© 2026 Pujitha Attuluri · Charlotte, NC · Open to relocation</div>
+  </div>
+</footer>
+
+</body>
+</html>
