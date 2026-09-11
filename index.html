@@ -77,10 +77,12 @@
   .sec-sub{color:var(--muted);margin-top:14px;font-size:1.02rem;max-width:56ch;}
 
   /* about */
-  .about-grid{display:grid;gap:40px;grid-template-columns:1fr;}
-  @media(min-width:860px){.about-grid{grid-template-columns:1.3fr 1fr;}}
+  .about-top{display:grid;gap:36px;grid-template-columns:1fr;margin-bottom:40px;}
+  @media(min-width:760px){.about-top{grid-template-columns:300px 1fr;align-items:start;}}
+  .about-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;box-shadow:0 16px 34px rgba(31,58,86,0.16);}
   .about-body p{color:var(--text);font-size:1.03rem;margin:0 0 16px;}
   .stat-list{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-content:start;}
+  @media(min-width:760px){.stat-list{grid-template-columns:repeat(4,1fr);}}
   .stat{border-left:2px solid var(--navy-dim);padding-left:16px;}
   .stat b{display:block;font-family:'Fraunces',serif;font-size:1.9rem;font-weight:600;color:var(--navy);}
   .stat span{color:var(--muted);font-size:0.88rem;}
@@ -175,6 +177,7 @@
       <a href="#projects" class="btn btn-primary">See the work</a>
       <a href="/resume.pdf" class="btn btn-ghost">Download Resume</a>
     </div>
+
   </div>
 </section>
 
@@ -184,18 +187,21 @@
       <div class="kicker">About</div>
       <h2 class="sec-title">Four years turning raw, messy data into systems people trust.</h2>
     </div>
-    <div class="about-grid">
+    <div class="about-top">
+      <div class="about-photo">
+        <img src="/pujitha_about.jpg" alt="Pujitha Attuluri in DUMBO, Brooklyn">
+      </div>
       <div class="about-body">
         <p>I started as a Decision Scientist at Mu Sigma, where I redesigned data schemas, migrated legacy pipelines to Delta Lake, and cut SLA processing time by 60%. I moved into leading a team as an Apprentice Leader, shipping a supply-chain risk simulation tool that saved a client $48M year-to-date and building the GenAI RAG framework that came after it.</p>
         <p>Most recently, I was at Hearst Television, engineering the analytics layer of a live migration from legacy Decentrix infrastructure to Microsoft Fabric, building Bronze/Silver/Gold data layers, validating revenue data at scale, and shipping Power BI semantic models with row-level security across 30+ stations.</p>
         <p>I'm finishing my Master's in Data Science &amp; Business Analytics at UNC Charlotte (GPA 4.0) this December, and looking for a full-time data engineering, analytics engineering, or data science role starting January 2027.</p>
       </div>
-      <div class="stat-list">
-        <div class="stat"><b>60%</b><span>SLA processing time cut via Delta Lake migration</span></div>
-        <div class="stat"><b>$48M</b><span>YTD savings from a supply-chain risk tool I led</span></div>
-        <div class="stat"><b>100M+</b><span>records processed per reporting cycle</span></div>
-        <div class="stat"><b>30+</b><span>stations served by the Fabric migration I helped build</span></div>
-      </div>
+    </div>
+    <div class="stat-list">
+      <div class="stat"><b>60%</b><span>SLA processing time cut via Delta Lake migration</span></div>
+      <div class="stat"><b>$48M</b><span>YTD savings from a supply-chain risk tool I led</span></div>
+      <div class="stat"><b>100M+</b><span>records processed per reporting cycle</span></div>
+      <div class="stat"><b>30+</b><span>stations served by the Fabric migration I helped build</span></div>
     </div>
   </div>
 </section>
