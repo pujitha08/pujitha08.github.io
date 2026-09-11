@@ -3,23 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-<title>Pujitha Attuluri — Data Engineer</title>
+<title>Pujitha Attuluri | Data Engineer</title>
 <meta name="description" content="Portfolio of Pujitha Attuluri, a Data Engineer in Charlotte, NC building cloud data platforms across Azure, Microsoft Fabric, and Databricks.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0D1520;
-    --panel:#121C2C;
-    --panel-2:#17233690;
-    --rule:#26344a;
-    --text:#E8ECF3;
-    --muted:#93a0b5;
-    --gold:#C9A24B;
-    --gold-dim:#8f7332;
-    --bronze:#a9703f;
-    --silver:#8fa2b8;
+    --ink:#EFEBE2;
+    --panel:#FFFFFF;
+    --panel-2:#FFFFFF90;
+    --rule:#DAD3C3;
+    --text:#242A32;
+    --muted:#6B6F78;
+    --navy:#1F3A56;
+    --navy-bright:#2C5079;
+    --navy-dim:#B7C3D0;
+    --bronze:#8B6A3F;
+    --silver:#5B6472;
     --max:1080px;
   }
   *{box-sizing:border-box;}
@@ -35,32 +36,27 @@
   h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;margin:0;letter-spacing:-0.01em;}
   a{color:inherit;text-decoration:none;}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
-  ::selection{background:var(--gold);color:#12180a;}
+  ::selection{background:var(--navy);color:#F5F1E8;}
 
-  /* layered band motif */
-  .strata{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
-  .strata span{position:absolute;left:-10%;right:-10%;height:130px;border-radius:2px;opacity:0.10;transform:skewY(-3deg);}
-  .strata .b1{top:6%;background:var(--bronze);}
-  .strata .b2{top:34%;background:var(--silver);opacity:.08;}
-  .strata .b3{top:64%;background:var(--gold);opacity:.14;}
+  /* hero background intentionally plain */
 
   header{
     position:sticky;top:0;z-index:20;
-    background:rgba(13,21,32,0.86);
+    background:rgba(239,235,226,0.86);
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--rule);
   }
   nav.wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
   .brand{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;}
   .navlinks{display:flex;gap:28px;font-size:0.92rem;color:var(--muted);}
-  .navlinks a:hover{color:var(--gold);}
+  .navlinks a:hover{color:var(--navy);}
   .navlinks{display:none;}
   @media(min-width:720px){.navlinks{display:flex;}}
 
   /* hero */
   .hero{position:relative;padding:96px 0 84px;overflow:hidden;}
   .hero .wrap{position:relative;z-index:1;}
-  .eyebrow{color:var(--gold);font-size:0.92rem;font-weight:500;margin-bottom:18px;}
+  .eyebrow{color:var(--navy);font-size:0.92rem;font-weight:500;margin-bottom:18px;}
   .hero h1{font-size:clamp(2.4rem,5.6vw,3.9rem);max-width:11ch;line-height:1.04;}
   .hero p.lede{margin-top:22px;max-width:56ch;color:var(--muted);font-size:1.12rem;}
   .hero .meta{margin-top:28px;display:flex;flex-wrap:wrap;gap:22px;color:var(--silver);font-size:0.94rem;}
@@ -69,13 +65,13 @@
     display:inline-block;padding:13px 24px;border-radius:3px;font-size:0.95rem;font-weight:600;
     border:1px solid transparent;transition:transform .15s ease, background .2s ease;
   }
-  .btn-primary{background:var(--gold);color:#161006;}
+  .btn-primary{background:var(--navy-bright);color:#F5F1E8;}
   .btn-primary:hover{transform:translateY(-1px);}
   .btn-ghost{border-color:var(--rule);color:var(--text);}
-  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+  .btn-ghost:hover{border-color:var(--navy);color:var(--navy);}
 
   section{padding:74px 0;border-top:1px solid var(--rule);}
-  .kicker{color:var(--gold);font-size:0.9rem;font-weight:600;margin-bottom:10px;}
+  .kicker{color:var(--navy);font-size:0.9rem;font-weight:600;margin-bottom:10px;}
   h2.sec-title{font-size:clamp(1.7rem,3vw,2.3rem);max-width:20ch;}
   .sec-head{margin-bottom:44px;max-width:640px;}
   .sec-sub{color:var(--muted);margin-top:14px;font-size:1.02rem;max-width:56ch;}
@@ -85,21 +81,23 @@
   @media(min-width:860px){.about-grid{grid-template-columns:1.3fr 1fr;}}
   .about-body p{color:var(--text);font-size:1.03rem;margin:0 0 16px;}
   .stat-list{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;align-content:start;}
-  .stat{border-left:2px solid var(--gold-dim);padding-left:16px;}
-  .stat b{display:block;font-family:'Fraunces',serif;font-size:1.9rem;font-weight:600;color:var(--gold);}
+  .stat{border-left:2px solid var(--navy-dim);padding-left:16px;}
+  .stat b{display:block;font-family:'Fraunces',serif;font-size:1.9rem;font-weight:600;color:var(--navy);}
   .stat span{color:var(--muted);font-size:0.88rem;}
 
   /* skills */
   .skill-groups{display:grid;gap:26px;}
   @media(min-width:720px){.skill-groups{grid-template-columns:1fr 1fr;}}
   .skill-cat{border:1px solid var(--rule);border-radius:4px;padding:22px 22px 18px;background:var(--panel);}
-  .skill-cat h3{font-size:1rem;font-family:'Inter',sans-serif;font-weight:600;color:var(--gold);margin-bottom:14px;}
+  .skill-cat h3{font-size:1rem;font-family:'Inter',sans-serif;font-weight:600;color:var(--navy);margin-bottom:14px;}
   .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
-  .chip{border:1px solid var(--rule);padding:6px 12px;border-radius:20px;font-size:0.84rem;color:var(--silver);}
+  .chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--rule);padding:6px 12px 6px 10px;border-radius:20px;font-size:0.84rem;color:var(--silver);background:var(--panel);}
+  .chip img{width:14px;height:14px;flex-shrink:0;opacity:0.9;}
 
   /* certifications */
   .cert-row{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));}
   .cert{border:1px solid var(--rule);background:var(--panel);border-radius:4px;padding:20px;}
+  .cert-type{display:block;font-size:0.72rem;font-weight:600;letter-spacing:0.04em;color:var(--navy);text-transform:uppercase;margin-bottom:8px;}
   .cert h4{font-size:1rem;margin-bottom:4px;}
   .cert p{color:var(--muted);font-size:0.88rem;margin:0;}
 
@@ -109,11 +107,11 @@
   .job:last-child{padding-bottom:0;}
   .job::before{
     content:'';position:absolute;left:-33px;top:5px;width:12px;height:12px;border-radius:50%;
-    background:var(--ink);border:2px solid var(--gold);
+    background:var(--ink);border:2px solid var(--navy);
   }
   .job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:6px;}
   .job-title{font-size:1.12rem;font-weight:600;font-family:'Fraunces',serif;}
-  .job-org{color:var(--gold);font-weight:500;}
+  .job-org{color:var(--navy);font-weight:500;}
   .job-time{color:var(--muted);font-size:0.88rem;white-space:nowrap;}
   .job ul{margin:12px 0 0;padding-left:18px;color:var(--text);}
   .job li{margin-bottom:8px;font-size:0.96rem;}
@@ -127,12 +125,12 @@
   .proj-card p{color:var(--muted);font-size:0.95rem;flex-grow:1;}
   .proj-tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0;}
   .proj-tags span{font-size:0.76rem;color:var(--silver);border:1px solid var(--rule);padding:3px 9px;border-radius:14px;}
-  .proj-link{color:var(--gold);font-size:0.9rem;font-weight:600;margin-top:6px;}
+  .proj-link{color:var(--navy);font-size:0.9rem;font-weight:600;margin-top:6px;}
   .proj-link:hover{text-decoration:underline;}
-  .flagship{border-color:var(--gold-dim);position:relative;}
+  .flagship{border-color:var(--navy-dim);position:relative;}
   .flagship::before{
     content:'Live App';position:absolute;top:-11px;left:22px;background:var(--ink);
-    color:var(--gold);font-size:0.74rem;font-weight:600;padding:0 8px;
+    color:var(--navy);font-size:0.74rem;font-weight:600;padding:0 8px;
   }
 
   footer{padding:60px 0 50px;text-align:left;}
@@ -141,7 +139,7 @@
   footer h2{font-size:clamp(1.6rem,3.4vw,2.2rem);max-width:14ch;}
   .foot-links{display:flex;gap:20px;font-size:0.95rem;}
   .foot-links a{color:var(--muted);}
-  .foot-links a:hover{color:var(--gold);}
+  .foot-links a:hover{color:var(--navy);}
   .copyright{margin-top:40px;color:var(--muted);font-size:0.8rem;border-top:1px solid var(--rule);padding-top:20px;}
 
   @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
@@ -164,19 +162,18 @@
 </header>
 
 <section class="hero">
-  <div class="strata"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
   <div class="wrap">
-    <div class="eyebrow">Data Engineer · Charlotte, NC</div>
+    <div class="eyebrow">Data Engineer · Analytics Engineer · Data Scientist · Charlotte, NC</div>
     <h1>I build the pipelines that decisions run on.</h1>
-    <p class="lede">Azure-certified data engineer with 4+ years shipping production data platforms — most recently engineering the Medallion migration to Microsoft Fabric at Hearst Television, while finishing an M.S. in Data Science &amp; Business Analytics at UNC Charlotte.</p>
+    <p class="lede">I build production data systems that hold up at scale, most recently engineering the Microsoft Fabric migration powering revenue reporting across 30+ Hearst Television stations. Azure-certified, with 4+ years in data engineering and analytics, and finishing my M.S. in Data Science &amp; Business Analytics at UNC Charlotte this December.</p>
     <div class="meta">
       <span>4+ years production experience</span>
       <span>Azure Data Engineer Associate</span>
-      <span>MS DS&amp;BA, UNC Charlotte — Dec 2026</span>
+      <span>MS Data Science &amp; Business Analytics, UNC Charlotte (Dec 2026)</span>
     </div>
     <div class="cta-row">
       <a href="#projects" class="btn btn-primary">See the work</a>
-      <a href="/resume.pdf" class="btn btn-ghost">Download résumé ↓</a>
+      <a href="/resume.pdf" class="btn btn-ghost">Download Resume</a>
     </div>
   </div>
 </section>
@@ -189,8 +186,8 @@
     </div>
     <div class="about-grid">
       <div class="about-body">
-        <p>I started as a Decision Scientist at Mu Sigma, where I redesigned data schemas, migrated legacy pipelines to Delta Lake, and cut SLA processing time by 60%. I moved into leading a team as an Apprentice Leader, shipping a supply-chain risk simulation tool that saved $48M year-to-date and building the GenAI RAG framework that came after it.</p>
-        <p>Most recently, I was at Hearst Television, engineering the analytics layer of a live migration from legacy Decentrix infrastructure to Microsoft Fabric — building Bronze/Silver/Gold data layers, validating revenue data at scale, and shipping Power BI semantic models with row-level security across 30+ stations.</p>
+        <p>I started as a Decision Scientist at Mu Sigma, where I redesigned data schemas, migrated legacy pipelines to Delta Lake, and cut SLA processing time by 60%. I moved into leading a team as an Apprentice Leader, shipping a supply-chain risk simulation tool that saved a client $48M year-to-date and building the GenAI RAG framework that came after it.</p>
+        <p>Most recently, I was at Hearst Television, engineering the analytics layer of a live migration from legacy Decentrix infrastructure to Microsoft Fabric, building Bronze/Silver/Gold data layers, validating revenue data at scale, and shipping Power BI semantic models with row-level security across 30+ stations.</p>
         <p>I'm finishing my Master's in Data Science &amp; Business Analytics at UNC Charlotte (GPA 4.0) this December, and looking for a full-time data engineering, analytics engineering, or data science role starting January 2027.</p>
       </div>
       <div class="stat-list">
@@ -213,37 +210,70 @@
       <div class="skill-cat">
         <h3>Cloud &amp; Data Platform</h3>
         <div class="chip-row">
-          <span class="chip">Azure Data Factory</span><span class="chip">Microsoft Fabric</span><span class="chip">Azure Databricks</span><span class="chip">Azure Synapse</span><span class="chip">ADLS Gen2</span><span class="chip">Azure Logic Apps</span><span class="chip">Docker</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">Azure Data Factory</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">Microsoft Fabric</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/databricks/1F3A56" onerror="this.remove()" alt="">Azure Databricks</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/databricks/1F3A56" onerror="this.remove()" alt="">Databricks Asset Bundles</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">Azure Synapse</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/snowflake/1F3A56" onerror="this.remove()" alt="">Snowflake</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/amazonaws/1F3A56" onerror="this.remove()" alt="">AWS (S3, EC2)</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">ADLS Gen2</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">Azure Logic Apps</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/docker/1F3A56" onerror="this.remove()" alt="">Docker</span>
         </div>
       </div>
       <div class="skill-cat">
         <h3>Data Engineering</h3>
         <div class="chip-row">
-          <span class="chip">Apache Spark / PySpark</span><span class="chip">Kafka</span><span class="chip">Hadoop</span><span class="chip">Delta Lake</span><span class="chip">Medallion Architecture</span><span class="chip">Batch &amp; Streaming ETL</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/apachespark/1F3A56" onerror="this.remove()" alt="">Apache Spark / PySpark</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/apachekafka/1F3A56" onerror="this.remove()" alt="">Kafka</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/apachehadoop/1F3A56" onerror="this.remove()" alt="">Hadoop</span>
+          <span class="chip">Delta Lake</span><span class="chip">Medallion Architecture</span><span class="chip">Batch &amp; Streaming ETL</span>
         </div>
       </div>
       <div class="skill-cat">
         <h3>Databases &amp; SQL</h3>
         <div class="chip-row">
-          <span class="chip">Advanced SQL</span><span class="chip">MySQL</span><span class="chip">Azure SQL DB</span><span class="chip">MS SQL Server</span>
+          <span class="chip">Advanced SQL</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/mysql/1F3A56" onerror="this.remove()" alt="">MySQL</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">Azure SQL DB</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftsqlserver/1F3A56" onerror="this.remove()" alt="">MS SQL Server</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/redis/1F3A56" onerror="this.remove()" alt="">Redis</span>
+          <span class="chip">NoSQL</span>
         </div>
       </div>
       <div class="skill-cat">
         <h3>BI &amp; Visualization</h3>
         <div class="chip-row">
-          <span class="chip">Power BI (DAX, RLS)</span><span class="chip">Microsoft Fabric</span><span class="chip">Plotly Dash</span><span class="chip">Streamlit</span><span class="chip">Excel</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/powerbi/1F3A56" onerror="this.remove()" alt="">Power BI (DAX, RLS)</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">Microsoft Fabric</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/plotly/1F3A56" onerror="this.remove()" alt="">Plotly Dash</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/streamlit/1F3A56" onerror="this.remove()" alt="">Streamlit</span>
+          <span class="chip">Power Automate</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftexcel/1F3A56" onerror="this.remove()" alt="">Excel</span>
         </div>
       </div>
       <div class="skill-cat">
         <h3>AI &amp; GenAI</h3>
         <div class="chip-row">
-          <span class="chip">RAG</span><span class="chip">LangChain</span><span class="chip">LLMs (OpenAI, Claude, Gemini)</span><span class="chip">MLflow</span><span class="chip">Scikit-learn</span><span class="chip">XGBoost</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/langchain/1F3A56" onerror="this.remove()" alt="">RAG (LangChain)</span>
+          <span class="chip">FAISS</span><span class="chip">pgvector</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/openai/1F3A56" onerror="this.remove()" alt="">LLMs (OpenAI, Claude, Gemini)</span>
+          <span class="chip">LLM Evaluation &amp; Fine-Tuning</span><span class="chip">Prompt Engineering</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/mlflow/1F3A56" onerror="this.remove()" alt="">MLflow</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/scikitlearn/1F3A56" onerror="this.remove()" alt="">Scikit-learn</span>
+          <span class="chip">XGBoost</span>
         </div>
       </div>
       <div class="skill-cat">
         <h3>DevOps &amp; Languages</h3>
         <div class="chip-row">
-          <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">R</span><span class="chip">Git</span><span class="chip">Azure DevOps</span><span class="chip">CI/CD</span><span class="chip">SonarQube</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/python/1F3A56" onerror="this.remove()" alt="">Python</span>
+          <span class="chip">SQL</span><span class="chip">R</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/git/1F3A56" onerror="this.remove()" alt="">Git</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">Azure DevOps</span>
+          <span class="chip">CI/CD</span>
+          <span class="chip"><img src="https://cdn.simpleicons.org/sonarqube/1F3A56" onerror="this.remove()" alt="">SonarQube</span>
         </div>
       </div>
     </div>
@@ -253,16 +283,18 @@
 <section id="certifications">
   <div class="wrap">
     <div class="sec-head">
-      <div class="kicker">Certifications</div>
-      <h2 class="sec-title">Verified credentials.</h2>
+      <div class="kicker">Certifications &amp; Credentials</div>
+      <h2 class="sec-title">Verified, hands-on, and everything in between.</h2>
     </div>
     <div class="cert-row">
       <div class="cert">
+        <span class="cert-type">Certification</span>
         <h4>Microsoft Certified: Azure Data Engineer Associate</h4>
         <p>Microsoft</p>
       </div>
       <div class="cert">
-        <h4>Snowflake Data Warehouse Essentials</h4>
+        <span class="cert-type">Hands-On Badge</span>
+        <h4>Snowflake Hands-On Essentials, Data Warehouse</h4>
         <p>Snowflake</p>
       </div>
     </div>
@@ -367,9 +399,33 @@
 
       <div class="proj-card">
         <h3>Netflix Churn Prediction</h3>
-        <p>Built a churn analytics framework combining predictive modeling, K-Means customer segmentation, and moderation analysis on 5,000 subscribers — 89.2% accuracy and 96.6% ROC-AUC, surfacing inactivity as the strongest early churn signal. Team project.</p>
+        <p>Built a churn analytics framework combining predictive modeling, K-Means customer segmentation, and moderation analysis on 5,000 subscribers, reaching 89.2% accuracy and 96.6% ROC-AUC and surfacing inactivity as the strongest early churn signal. Team project.</p>
         <div class="proj-tags"><span>Python</span><span>Logistic Regression</span><span>K-Means</span><span>Statsmodels</span><span>Moderation Analysis</span></div>
         <a class="proj-link" href="https://github.com/pujitha08/Netflix-Churn-prediction" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+
+      <div class="proj-card">
+        <h3>Kickstarter Education Campaign Analysis</h3>
+        <p>Investigated why education-focused crowdfunding campaigns underperform on a platform built around entertainment projects, analyzing project descriptions and funding patterns to surface what creators can do differently. Team project.</p>
+        <div class="proj-tags"><span>Python</span><span>Text Analysis</span><span>Pandas</span></div>
+        <a class="proj-link" href="https://github.com/pujitha08/Kickstarter_Analysis" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+
+      <div class="proj-card">
+        <h3>Taste Twin: Personalized Book Discovery</h3>
+        <p>Built a cluster analysis pipeline over Goodreads data to find reader-matching patterns, powering personalized book recommendations based on shared taste rather than simple genre overlap.</p>
+        <div class="proj-tags"><span>Python</span><span>K-Means</span><span>PCA</span><span>Flask</span></div>
+        <a class="proj-link" href="https://github.com/pujitha08/Taste-Twin-Personalized-Book-Discovery-Through-Reader-Matching-pattern-clustering" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+
+      <div class="proj-card">
+        <h3>Bowtie Risk Diagram</h3>
+        <p>Built an interactive rideshare-safety risk analysis tool using bowtie methodology, mapping how small failures (driver impairment, distraction, poor conditions) compound into major incidents. Features collapsible threat/consequence chains, toggleable barrier states, and ELK auto-layout. Team project.</p>
+        <div class="proj-tags"><span>Python</span><span>Streamlit</span><span>ReactFlow</span><span>JavaScript</span></div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a class="proj-link" href="https://bowtie-diagram-app-reactflow-team02.streamlit.app/" target="_blank" rel="noopener">Live app →</a>
+          <a class="proj-link" href="https://github.com/pujitha08/bowtie-diagram-streamlit" target="_blank" rel="noopener">GitHub →</a>
+        </div>
       </div>
 
     </div>
@@ -384,6 +440,7 @@
         <a href="mailto:pujithaattuluri08@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/pujitha-attuluri-738830158" target="_blank" rel="noopener">LinkedIn ↗</a>
         <a href="https://github.com/pujitha08" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="#certifications">Certifications</a>
         <a href="tel:+19804864746">+1 980-486-4746</a>
       </div>
     </div>
