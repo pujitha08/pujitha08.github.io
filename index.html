@@ -95,6 +95,13 @@
   .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
   .chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--rule);padding:6px 12px 6px 10px;border-radius:20px;font-size:0.84rem;color:var(--silver);background:var(--panel);}
   .chip img{width:14px;height:14px;flex-shrink:0;opacity:0.9;}
+  .badge{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:4px;font-size:9px;font-weight:800;color:#fff;flex-shrink:0;line-height:1;}
+  .badge-azure{background:#0078D4;}
+  .badge-aws{background:#FF9900;color:#232F3E;}
+  .badge-powerbi{background:#F2C811;color:#2c2410;}
+  .badge-excel{background:#217346;}
+  .badge-sqlserver{background:#CC2927;}
+  .badge-sonarqube{background:#4E9BCD;}
 
   /* certifications */
   .cert-row{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));}
@@ -216,15 +223,15 @@
       <div class="skill-cat">
         <h3>Cloud &amp; Data Platform</h3>
         <div class="chip-row">
-          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">Azure Data Factory</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">Microsoft Fabric</span>
+          <span class="chip"><span class="badge badge-azure">A</span>Azure Data Factory</span>
+          <span class="chip"><span class="badge badge-azure">A</span>Microsoft Fabric</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/databricks/1F3A56" onerror="this.remove()" alt="">Azure Databricks</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/databricks/1F3A56" onerror="this.remove()" alt="">Databricks Asset Bundles</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">Azure Synapse</span>
+          <span class="chip"><span class="badge badge-azure">A</span>Azure Synapse</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/snowflake/1F3A56" onerror="this.remove()" alt="">Snowflake</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/amazonaws/1F3A56" onerror="this.remove()" alt="">AWS (S3, EC2)</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">ADLS Gen2</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">Azure Logic Apps</span>
+          <span class="chip"><span class="badge badge-aws">A</span>AWS (S3, EC2)</span>
+          <span class="chip">ADLS Gen2</span>
+          <span class="chip"><span class="badge badge-azure">A</span>Azure Logic Apps</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/docker/1F3A56" onerror="this.remove()" alt="">Docker</span>
         </div>
       </div>
@@ -242,8 +249,8 @@
         <div class="chip-row">
           <span class="chip">Advanced SQL</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/mysql/1F3A56" onerror="this.remove()" alt="">MySQL</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">Azure SQL DB</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftsqlserver/1F3A56" onerror="this.remove()" alt="">MS SQL Server</span>
+          <span class="chip"><span class="badge badge-azure">A</span>Azure SQL DB</span>
+          <span class="chip"><span class="badge badge-sqlserver">S</span>MS SQL Server</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/redis/1F3A56" onerror="this.remove()" alt="">Redis</span>
           <span class="chip">NoSQL</span>
         </div>
@@ -251,12 +258,12 @@
       <div class="skill-cat">
         <h3>BI &amp; Visualization</h3>
         <div class="chip-row">
-          <span class="chip"><img src="https://cdn.simpleicons.org/powerbi/1F3A56" onerror="this.remove()" alt="">Power BI (DAX, RLS)</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">Microsoft Fabric</span>
+          <span class="chip"><span class="badge badge-powerbi">P</span>Power BI (DAX, RLS)</span>
+          <span class="chip"><span class="badge badge-azure">A</span>Microsoft Fabric</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/plotly/1F3A56" onerror="this.remove()" alt="">Plotly Dash</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/streamlit/1F3A56" onerror="this.remove()" alt="">Streamlit</span>
           <span class="chip">Power Automate</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftexcel/1F3A56" onerror="this.remove()" alt="">Excel</span>
+          <span class="chip"><span class="badge badge-excel">X</span>Excel</span>
         </div>
       </div>
       <div class="skill-cat">
@@ -264,7 +271,7 @@
         <div class="chip-row">
           <span class="chip"><img src="https://cdn.simpleicons.org/langchain/1F3A56" onerror="this.remove()" alt="">RAG (LangChain)</span>
           <span class="chip">FAISS</span><span class="chip">pgvector</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/openai/1F3A56" onerror="this.remove()" alt="">LLMs (OpenAI, Claude, Gemini)</span>
+          <span class="chip">LLMs (OpenAI, Claude, Gemini)</span>
           <span class="chip">LLM Evaluation &amp; Fine-Tuning</span><span class="chip">Prompt Engineering</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/mlflow/1F3A56" onerror="this.remove()" alt="">MLflow</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/scikitlearn/1F3A56" onerror="this.remove()" alt="">Scikit-learn</span>
@@ -277,9 +284,9 @@
           <span class="chip"><img src="https://cdn.simpleicons.org/python/1F3A56" onerror="this.remove()" alt="">Python</span>
           <span class="chip">SQL</span><span class="chip">R</span>
           <span class="chip"><img src="https://cdn.simpleicons.org/git/1F3A56" onerror="this.remove()" alt="">Git</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/microsoftazure/1F3A56" onerror="this.remove()" alt="">Azure DevOps</span>
+          <span class="chip"><span class="badge badge-azure">A</span>Azure DevOps</span>
           <span class="chip">CI/CD</span>
-          <span class="chip"><img src="https://cdn.simpleicons.org/sonarqube/1F3A56" onerror="this.remove()" alt="">SonarQube</span>
+          <span class="chip"><span class="badge badge-sonarqube">S</span>SonarQube</span>
         </div>
       </div>
     </div>
@@ -434,6 +441,20 @@
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<section id="outside-work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Outside Work</div>
+      <h2 class="sec-title">Where I recharge.</h2>
+    </div>
+    <div class="chip-row">
+      <span class="chip">📚 Reading</span>
+      <span class="chip">✈️ Traveling</span>
+      <span class="chip">🥾 Hiking</span>
     </div>
   </div>
 </section>
